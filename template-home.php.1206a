@@ -1,0 +1,300 @@
+<?php
+/**
+ *
+ * Template Name: Home-Page
+ *
+ * The template for the custom PJC pages.
+ *
+ * This is the template that displays custom PJC pages--not default.
+ *
+ * @package Custom PJC
+ */
+
+get_header(custom2); ?>
+
+			<?php while ( have_posts() ) : the_post(); ?>
+				<?php get_template_part( 'content', 'page' ); ?>
+			<?php endwhile; wp_reset_query(); ?>
+
+			<style>
+				body {
+					background-color: #c0c0c0;
+				}
+				.div-line1, .div-line2, .div-line4, .div-line6, .div-line7, .div-block3L, .div-block3R, .div-block5L, .div-block5C, .div-block5R {
+					box-shadow: 5px 5px 5px 5px #000000;
+			  }
+			  .home-section {
+			    display: -webkit-box;
+			    display: -webkit-flex;
+			    display: -ms-flexbox;
+			    display: flex;
+			    width: 100%;
+			    min-width: 100%;
+			    margin-right: 0px;
+			    padding-right: 0px;
+			    -webkit-box-orient: vertical;
+			    -webkit-box-direction: normal;
+			    -webkit-flex-direction: column;
+			    -ms-flex-direction: column;
+			    flex-direction: column;
+			    -webkit-flex-wrap: nowrap;
+			    -ms-flex-wrap: nowrap;
+			    flex-wrap: nowrap;
+			  }
+			  .line-container3, .line-container5 {
+			    display: -webkit-box;
+			    display: -webkit-flex;
+			    display: -ms-flexbox;
+			    display: flex;
+			    -webkit-box-orient: horizontal;
+			    -webkit-box-direction: normal;
+			    -webkit-flex-direction: row;
+			    -ms-flex-direction: row;
+			    flex-direction: row;
+			    -webkit-box-pack: justify;
+			    -webkit-justify-content: space-between;
+			    -ms-flex-pack: justify;
+			    justify-content: space-between;
+			  }
+			  .div-block3L, .div-block3R {
+			    -webkit-box-flex: 1;
+			    -webkit-felx: 1;
+			    -ms-flex: 1;
+			    flex: 1;
+			    padding-left: 12px;
+			    padding-right: 12px;
+			    padding-top: 2px;
+			    padding-bottom: 2px;
+			    margin-top: 5px;
+			    margin-bottom: 5px;
+			    border: 2px solid #000000;
+			    text-align: left;
+			    border-radius: 8px;
+			    background-color: #00274c;
+			    color: #e6e6e6;
+			    font-weight: normal;
+			    font-size: 18px;
+			    line-height: 1.2;
+			  }
+			  .div-block3L {
+			    margin-left: 12px;
+			    margin-right: 20px;
+			  }
+			  .div-block3R {
+			    margin-left: 20px;
+			    margin-right: 12px;
+			  }
+			  .div-block3L ul, .div-block3R ul {
+			    margin-top: 0px;
+				margin-bottom: 10px;
+			    padding-left: 20px;
+			  }
+			   .div-block5L, .div-block5C, .div-block5R {
+			    -webkit-box-flex: 1;
+			    -webkit-felx: 1;
+			    -ms-flex: 1;
+			    flex: 1;
+			    padding-left: 2px;
+			    padding-right: 2px;
+			    padding-top: 2px;
+			    padding-bottom: 2px;
+			    margin-left: 10px;
+			    margin-right: 10px;
+			    margin-top: 5px;
+			    margin-bottom: 5px;
+			    border: 2px solid #000000;
+			    text-align: left;
+			    border-radius: 8px;
+			    background-color: #00274c;
+			    color: #e6e6e6;
+			    font-weight: normal;
+			    font-size: 18px;
+			  }
+			  .div-block5L ul, .div-block5C ul, .div-block5R ul {
+			    margin-top: 0px;
+				margin-bottom: 10px;
+				line-height: 1.2;
+			    padding-left: 20px;
+			  }
+			  .div-line1 {
+			    display: block;
+			    font-weight: bold;
+			    font-size: 28px;
+			    color: #e6e6e6;
+			    text-shadow: 1px 1px 1px #000000;
+			    padding-left: 12px;
+			    padding-right: 12px;
+			    padding-top: 12px;
+			    padding-bottom: 12px;
+			    margin-left: 5px;
+			    margin-right: 5px;
+			    margin-top: 5px;
+			    margin-bottom: 5px;
+			    border: 2px solid #000000;
+			    border-radius: 8px;
+			    text-align: center;
+			    background-color: #00274c;
+			  }
+			  .div-line2, .div-line7 {
+			    display: block;
+			    font-weight: normal;
+			    font-size: 22px;
+			    color: #e6e6e6;
+			    padding-left: 8px;
+			    padding-right: 8px;
+			    padding-top: 2px;
+			    padding-bottom: 2px;
+			    margin-left: 5px;
+			    margin-right: 5px;
+			    margin-top: 5px;
+			    margin-bottom: 5px;
+			    border: 2px solid #000000;
+			    border-radius: 8px;
+			    text-align: center;
+			    background-color: #00274c;
+			  }
+			  .div-line4 {
+			    display: block;
+			    font-weight: normal;
+			    color: #e6e6e6;
+			    font-size: 22px;
+			    padding-left: 96px;
+			    padding-right: 96px;
+			    padding-top: 2px;
+			    padding-bottom: 2px;
+			    margin-left: 5px;
+			    margin-right: 5px;
+			    margin-top: 5px;
+			    margin-bottom: 5px;
+			    border: 2px solid #000000;
+			    border-radius: 8px;
+			    text-align: center;
+			    background-color: #00274c;
+			  }
+			  .div-line6 {
+			    display: block;
+			    font-weight: normal;
+			    color: #e6e6e6;
+			    font-size: 20px;
+			    padding-left: 10px;
+			    padding-right: 10px;
+			    padding-top: 2px;
+			    padding-bottom: 2px;
+			    margin-left: 5px;
+			    margin-right: 5px;
+			    margin-top: 5px;
+			    margin-bottom: 5px;
+			    border: 2px solid #000000;
+			    border-radius: 8px;
+			    text-align: left;
+			    background-color: #00274c;
+			  }
+			  .div-line6 ul {
+			    margin-top: 0px;
+			    padding-left: 20px;
+				line-height: 1.2;
+				margin-bottom: 10px;
+			  }
+			  .div-line7 {
+			    display: block;
+			    font-weight: normal;
+			    font-size: 14px;
+			    color: #e6e6e6;
+			    padding-left: 10px;
+			    padding-right: 10px;
+			    padding-top: 2px;
+			    padding-bottom: 2px;
+			    margin-left: 5px;
+			    margin-right: 5px;
+			    margin-top: 5px;
+			    margin-bottom: 5px;
+			    border: 2px solid #000000;
+			    border-radius: 8px;
+			    text-align: left;
+			    background-color: #00274c;
+			  }
+			  .line-container1, .line-container2, .line-container4, .line-container6, .line-container7 {
+			    display: flex;
+			    flex-wrap: wrap;
+			    align-items: center;
+			    justify-content: center;
+			  }
+			</style>
+
+			<div class="home-section">
+			  <div class="line-container1">
+			    <div class="div-line1">Patrick Carpentier -- IT Consultant</div>
+			  </div>
+			  </br>
+			  <div class="line-container2">
+			    <div class="div-line2">Are you looking for an engineer that works in IT, thinks critically, and with logic, and is in search of problems to be owned and solved quickly?
+			    </div>
+			  </div>
+			  </br>
+			  <div class="div-line3 line-container3">
+			    <div class="div-block3L"><big>Do you have</big>
+			      <ul><li>A small office with Technology needs?</li>
+			      <li>A large enterprise system that needs support, development or an experienced hand?</li>
+			      <li>A state-wide system that needs to be running 24/7/365?</li>
+			      <li>An office that needs to be productive every day?</li>
+			      <li>Or anything in between...</li></ul>
+			    </div>
+			    <div class="div-block3R"><big>Do you need</big>
+			      <ul><li>An experience IT consultant, manager or team lead?</li>
+			        <li>Someone to contribute to your team?</li>
+			        <li>A small project that you want to get off your plate?</li>
+			        <li>New solutions or technology?</li>
+			        <li>Help expanding your capabilities or increasing productivity?</li></ul>
+			    </div>
+			  </div>
+			  </br>
+			  <div class="line-container4">
+			    <div class="div-line4">I'm confident I can help</div>
+			  </div>
+			  </br>
+			  <div class="div-line5 line-container5">
+			    <div class="div-block5L"><big>Experience</big>
+			      <ul><li>A</li>
+			      <li>B</li>
+			      <li>C</li>
+			      <li>D</li>
+			      <li>E</li></ul>
+			    </div>
+			    <div class="div-block5C"><big>Skills</big>
+			      <ul><li>A</li>
+			      <li>B</li>
+			      <li>C</li>
+			      <li>D</li>
+			      <li>E</li></ul>
+			    </div>
+			    <div class="div-block5R"><big>Values</big>
+			      <ul><li>A</li>
+			      <li>B</li>
+			      <li>C</li>
+			      <li>D</li>
+			      <li>E</li></ul>
+			    </div>
+			  </div>
+			  </br>
+			  <div class="line-container6">
+			    <div class="div-line6">I can
+			      <ul><li>Build new systems</li>
+			        <li>Upgrade existing systems</li>
+			        <li>Evaluate new technologies or systems</li>
+			        <li>Plan a new technology initiative</li>
+			        <li>Integrate systems</li>
+			        <li>Join your team</li>
+			        <li>Own problems and deliverables</li>
+			        <li>Constantly be looking for increasing productivity, saving time, saving money</li>
+			        <li>Work with urgency keeping the end-user, the owner and the business in focus</li>
+			        <li>Find the balance between what is needed, what can be done, and what will get used</li></ul>
+			    </div>
+			  </div>
+			  </br>
+			  <div class="line-container7">
+			    <div class="div-line7">* Educated, trained and experienced before every problem, error or code snippet could only be found with brains and books--not Google.
+			    </div>
+			  </div>
+			</div>
+
+<?php get_footer(); ?>

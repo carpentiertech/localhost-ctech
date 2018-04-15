@@ -1,0 +1,638 @@
+<?php
+/**
+ *
+ * Template Name: Custom-Kids
+ *
+ * The template for the kids page.
+ *
+ * @package Custom PJC
+ */
+
+get_header(blank); ?>
+
+	<?php while ( have_posts() ) : the_post(); ?>
+		<?php get_template_part( 'content', 'page' ); ?>
+	<?php endwhile; wp_reset_query(); ?>
+
+	<style>
+		div#header {
+			display: none;
+		}
+		header#introduction {
+			display: none;
+		}
+		div#wpadminbar.no-grav{
+			display: none;
+		}
+		ul#tabs-list {
+			list-style: none;
+			text-align: center;
+			border-bottom: 1px solid #dfdfdf;
+			margin: 0;
+			padding: 0;
+		}
+		label.panel-label {
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			display: block;
+			width: 100%;
+			color: #bdc3c7;
+			cursor: pointer;
+			background-color: #ecf0f1;
+			-webkit-transition-property: background-color, color;
+			transition-property: background-color, color;
+			-webkit-transition-duration: 200ms;
+			transition-duration: 200ms;
+		}
+		label.panel-label:hover {
+			color: #c0392b;
+		}
+		#panels {
+			background-color: white;
+		}
+		#panels .container {
+			margin: 0 auto;
+			width: 90%;
+		}
+		#panels section header label.panel-label {
+			padding: 12px 24px;
+			box-sizing: border-box;
+		}
+		#panels section main {
+			box-sizing: border-box;
+			max-height: 0;
+			opacity: 0;
+			-webkit-transition: opacity 600ms;
+			transition: opacity 600ms;
+			overflow-y: hidden;
+		}
+		#panel-1-ctrl:checked ~ #panels #panel-1 main {
+			max-height: initial;
+			opacity: 1;
+			padding: 48px 24px;
+		}
+		#panel-2-ctrl:checked ~ #panels #panel-2 main {
+			max-height: initial;
+			opacity: 1;
+			padding: 48px 24px;
+		}
+		#panel-3-ctrl:checked ~ #panels #panel-3 main {
+			max-height: initial;
+			opacity: 1;
+			padding: 48px 24px;
+		}
+		#panel-4-ctrl:checked ~ #panels #panel-4 main {
+			max-height: initial;
+			opacity: 1;
+			padding: 48px 24px;
+		}
+		#panel-5-ctrl:checked ~ #panels #panel-5 main {
+			max-height: initial;
+			opacity: 1;
+			padding: 48px 24px;
+		}
+		@media all and (max-width: 767px) {
+			#nav-ctrl:checked ~ #tabs-list #li-for-panel-1 {
+				max-height: 46px;
+				opacity: 1;
+			}
+			#nav-ctrl:checked ~ #tabs-list #li-for-panel-2 {
+				max-height: 46px;
+				opacity: 1;
+			}
+			#nav-ctrl:checked ~ #tabs-list #li-for-panel-3 {
+				max-height: 46px;
+				opacity: 1;
+			}
+			#nav-ctrl:checked ~ #tabs-list #li-for-panel-4 {
+				max-height: 46px;
+				opacity: 1;
+			}
+			#nav-ctrl:checked ~ #tabs-list #li-for-panel-5 {
+				max-height: 46px;
+				opacity: 1;
+			}
+			#open-nav-label {
+				display: block;
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				cursor: pointer;
+			}
+			#nav-ctrl:checked ~ #tabs-list #open-nav-label {
+				display: none;
+			}
+			#close-nav-label {
+				display: block;
+				max-height: 0;
+				overflow-y: hidden;
+				background-color: #444444;
+				color: #ecf0f1;
+				padding: 0px;
+				-webkit-transition: max-height 200ms;
+				transition: max-height 200ms;
+				cursor: pointer;
+				text-transform: uppercase;
+				font-size: 12px;
+				line-height: 22px;
+				letter-spacing: 1px;
+			}
+			#nav-ctrl:checked ~ #tabs-list #close-nav-label {
+				max-height: 36px;
+				opacity: 1;
+				padding: 12px 24px;
+			}
+			#tabs-list {
+				position: relative;
+			}
+			#tabs-list label.panel-label {
+				padding: 12px 0;
+			}
+			#tabs-list #li-for-panel-1 {
+				max-height: 0;
+				overflow-y: hidden;
+				-webkit-transition: max-height 200ms;
+				transition: max-height 200ms;
+			}
+			#tabs-list #li-for-panel-2 {
+				max-height: 0;
+				overflow-y: hidden;
+				-webkit-transition: max-height 200ms;
+				transition: max-height 200ms;
+			}
+			#tabs-list #li-for-panel-3 {
+				max-height: 0;
+				overflow-y: hidden;
+				-webkit-transition: max-height 200ms;
+				transition: max-height 200ms;
+			}
+			#tabs-list #li-for-panel-4 {
+				max-height: 0;
+				overflow-y: hidden;
+				-webkit-transition: max-height 200ms;
+				transition: max-height 200ms;
+			}
+			#tabs-list #li-for-panel-5 {
+				max-height: 0;
+				overflow-y: hidden;
+				-webkit-transition: max-height 200ms;
+				transition: max-height 200ms;
+			}
+			#panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 {
+				max-height: 46px;
+				opacity: 1;
+			}
+			#panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 label.panel-label {
+				background-color: white;
+				color: #c0392b;
+				background-color: #c0392b;
+				color: white;
+			}
+			#panel-2-ctrl:checked ~ #tabs-list #li-for-panel-2 {
+				max-height: 46px;
+				opacity: 1;
+			}
+			#panel-2-ctrl:checked ~ #tabs-list #li-for-panel-2 label.panel-label {
+				background-color: white;
+				color: #c0392b;
+				background-color: #c0392b;
+				color: white;
+			}
+			#panel-3-ctrl:checked ~ #tabs-list #li-for-panel-3 {
+				max-height: 46px;
+				opacity: 1;
+			}
+			#panel-3-ctrl:checked ~ #tabs-list #li-for-panel-3 label.panel-label {
+				background-color: white;
+				color: #c0392b;
+				background-color: #c0392b;
+				color: white;
+			}
+			#panel-4-ctrl:checked ~ #tabs-list #li-for-panel-4 {
+				max-height: 46px;
+				opacity: 1;
+			}
+			#panel-4-ctrl:checked ~ #tabs-list #li-for-panel-4 label.panel-label {
+				background-color: white;
+				color: #c0392b;
+				background-color: #c0392b;
+				color: white;
+			}
+			#panel-5-ctrl:checked ~ #tabs-list #li-for-panel-5 {
+				max-height: 46px;
+				opacity: 1;
+			}
+			#panel-5-ctrl:checked ~ #tabs-list #li-for-panel-5 label.panel-label {
+				background-color: white;
+				color: #c0392b;
+				background-color: #c0392b;
+				color: white;
+			}
+			#panels .container {
+				width: 100%;
+			}
+			#panels section header {
+				display: block;
+			}
+		}
+		@media all and (min-width: 768px) {
+			#panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 {
+				pointer-events: none;
+				cursor: default;
+				-webkit-transform: translate3d(0, 1px, 0);
+				transform: translate3d(0, 1px, 0);
+				box-shadow: none;
+				border-right: none;
+			}
+			#panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1.last {
+				border-right: 1px solid transparent;
+			}
+			#panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 + li {
+				border-left: 1px solid #dfdfdf;
+			}
+			#panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 label.panel-label {
+				background-color: white;
+				color: #c0392b;
+				padding-top: 26px;
+			}
+			#panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 label.panel-label::after {
+				height: 6px;
+			}
+			#panel-2-ctrl:checked ~ #tabs-list #li-for-panel-2 {
+				pointer-events: none;
+				cursor: default;
+				-webkit-transform: translate3d(0, 1px, 0);
+				transform: translate3d(0, 1px, 0);
+				box-shadow: none;
+				border-right: none;
+			}
+			#panel-2-ctrl:checked ~ #tabs-list #li-for-panel-2.last {
+				border-right: 1px solid transparent;
+			}
+			#panel-2-ctrl:checked ~ #tabs-list #li-for-panel-2 + li {
+				border-left: 1px solid #dfdfdf;
+			}
+			#panel-2-ctrl:checked ~ #tabs-list #li-for-panel-2 label.panel-label {
+				background-color: white;
+				color: #c0392b;
+				padding-top: 26px;
+			}
+			#panel-2-ctrl:checked ~ #tabs-list #li-for-panel-2 label.panel-label::after {
+				height: 6px;
+			}
+			#panel-3-ctrl:checked ~ #tabs-list #li-for-panel-3 {
+				pointer-events: none;
+				cursor: default;
+				-webkit-transform: translate3d(0, 1px, 0);
+				transform: translate3d(0, 1px, 0);
+				box-shadow: none;
+				border-right: none;
+			}
+			#panel-3-ctrl:checked ~ #tabs-list #li-for-panel-3.last {
+				border-right: 1px solid transparent;
+			}
+			#panel-3-ctrl:checked ~ #tabs-list #li-for-panel-3 + li {
+				border-left: 1px solid #dfdfdf;
+			}
+			#panel-3-ctrl:checked ~ #tabs-list #li-for-panel-3 label.panel-label {
+				background-color: white;
+				color: #c0392b;
+				padding-top: 26px;
+			}
+			#panel-3-ctrl:checked ~ #tabs-list #li-for-panel-3 label.panel-label::after {
+				height: 6px;
+			}
+			#panel-4-ctrl:checked ~ #tabs-list #li-for-panel-4 {
+				pointer-events: none;
+				cursor: default;
+				-webkit-transform: translate3d(0, 1px, 0);
+				transform: translate3d(0, 1px, 0);
+				box-shadow: none;
+				border-right: none;
+			}
+			#panel-4-ctrl:checked ~ #tabs-list #li-for-panel-4.last {
+				border-right: 1px solid transparent;
+			}
+			#panel-4-ctrl:checked ~ #tabs-list #li-for-panel-4 + li {
+				border-left: 1px solid #dfdfdf;
+			}
+			#panel-4-ctrl:checked ~ #tabs-list #li-for-panel-4 label.panel-label {
+				background-color: white;
+				color: #c0392b;
+				padding-top: 26px;
+			}
+			#panel-4-ctrl:checked ~ #tabs-list #li-for-panel-4 label.panel-label::after {
+				height: 6px;
+			}
+			#panel-5-ctrl:checked ~ #tabs-list #li-for-panel-5 {
+				pointer-events: none;
+				cursor: default;
+				-webkit-transform: translate3d(0, 1px, 0);
+				transform: translate3d(0, 1px, 0);
+				box-shadow: none;
+				border-right: none;
+			}
+			#panel-5-ctrl:checked ~ #tabs-list #li-for-panel-5.last {
+				border-right: 1px solid transparent;
+			}
+			#panel-5-ctrl:checked ~ #tabs-list #li-for-panel-5 + li {
+				border-left: 1px solid #dfdfdf;
+			}
+			#panel-5-ctrl:checked ~ #tabs-list #li-for-panel-5 label.panel-label {
+				background-color: white;
+				color: #c0392b;
+				padding-top: 26px;
+			}
+			#panel-5-ctrl:checked ~ #tabs-list #li-for-panel-5 label.panel-label::after {
+				height: 6px;
+			}
+			ul#tabs-list {
+				text-align: center;
+				border-bottom: 1px solid #dfdfdf;
+			}
+			ul#tabs-list li {
+				display: inline-block;
+				text-align: center;
+				font-size: 0.875em;
+				width: 18%;
+				box-shadow: 0px -2px 2px rgba(0, 0, 0, 0.05);
+				border-right: 1px solid #dfdfdf;
+				position: relative;
+			}
+			ul#tabs-list li:hover {
+				-webkit-transition: none;
+				transition: none;
+				border-right: none;
+			}
+			ul#tabs-list li:hover.last {
+				border-right: 1px solid transparent;
+			}
+			ul#tabs-list li:hover + li {
+				border-left: 1px solid #dfdfdf;
+			}
+			ul#tabs-list li label.panel-label {
+				position: relative;
+				padding: 24px 0;
+			}
+			ul#tabs-list li label.panel-label::after {
+				content: "";
+				position: absolute;
+				width: 100%;
+				left: 0;
+				bottom: 100%;
+				background-color: #c0392b;
+				height: 0;
+				-webkit-transition-property: height;
+				transition-property: height;
+				-webkit-transition-duration: 200ms;
+				transition-duration: 200ms;
+			}
+			ul#tabs-list li label.panel-label:hover {
+				padding-top: 25px;
+			}
+			ul#tabs-list li label.panel-label:hover::after {
+				height: 6px;
+			}
+			#open-nav-label, #close-nav-label {
+				display: none;
+			}
+			#nav-ctrl {
+				display: none;
+			}
+		}
+		@media all and (min-width: 900px) {
+			main {
+				width: 70%;
+				margin: 0 auto;
+			}
+		}
+		.panel-radios {
+			position: fixed;
+			left: 50%;
+			top: 10px;
+			width: 20px;
+			opacity: 0.5;
+			z-index: 99;
+		}
+		.panel-radios:nth-child(1) {
+			-webkit-transform: translateX(-50px);
+			transform: translateX(-50px);
+		}
+		.panel-radios:nth-child(2) {
+			-webkit-transform: translateX(-30px);
+			transform: translateX(-30px);
+		}
+		.panel-radios:nth-child(3) {
+			-webkit-transform: translateX(-10px);
+			transform: translateX(-10px);
+		}
+		.panel-radios:nth-child(4) {
+			-webkit-transform: translateX(10px);
+			transform: translateX(10px);
+		}
+		.panel-radios:nth-child(5) {
+			-webkit-transform: translateX(30px);
+			transform: translateX(30px);
+		}
+		.panel-radios:nth-child(6) {
+			top: 30px;
+			-webkit-transform: translateX(-10px);
+			transform: translateX(-10px);
+			display: block;
+		}
+		body {
+			background: #e74c3c;
+			color: #444444;
+			font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+		}
+		#introduction {
+			width: 90%;
+			margin: 0 auto;
+			padding: 48px 24px;
+			color: white;
+		}
+		#introduction h1 {
+			font-weight: 300;
+			text-align: center;
+		}
+		main h1 {
+			margin-top: 0;
+			font-weight: 300;
+			color: #c0392b;
+		}
+		main p {
+			line-height: 1.8;
+		}
+		main hr {
+			margin: 12px 0;
+			border-top: 1px solid #dfdfdf;
+		}
+		label.demo-label {
+			background-color: #c0392b;
+			color: white;
+			padding: 4px 8px;
+			border-radius: 2px;
+			cursor: pointer;
+			display: inline-block;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+		label.demo-label:hover {
+			background-color: #e74c3c;
+		}
+		#demo-child-toggle {
+			display: none;
+		}
+		#demo-child-toggle:checked ~ #demo-parent #demo-child {
+			color: #c0392b;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+		#demo-parent {
+			margin-top: 8px;
+		}
+		code, pre {
+			color: #c0392b;
+			font-family: Inconsolata, "Andale Mono", Andale, monowidth;
+			background-color: #ecf0f1;
+			border: 1px solid #dfdfdf;
+			border-radius: 2px;
+		}
+		code {
+			padding: 2px 6px;
+		}
+		pre {
+			padding: 12px;
+			line-height: 1.6;
+		}
+		pre strong {
+			color: #444444;
+			font-weight: normal;
+		}
+	</style>
+
+	<html lang="en" >
+		<head>
+			<meta charset="UTF-8">
+  			<title>Lena & Tommy</title>
+  				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+		</head>
+		<body>
+			<!-- TAB CONTROLLERS -->
+			<input id="panel-1-ctrl" class="panel-radios" type="radio" name="tab-radios">
+			<input id="panel-2-ctrl" class="panel-radios" type="radio" name="tab-radios">
+			<input id="panel-3-ctrl" class="panel-radios" type="radio" name="tab-radios">
+			<input id="panel-4-ctrl" class="panel-radios" type="radio" name="tab-radios">
+			<input id="panel-5-ctrl" class="panel-radios" type="radio" name="tab-radios">
+			<input id="nav-ctrl" class="panel-radios" type="checkbox" name="nav-checkbox">
+			<header id="introduction">
+				<h1>Lena & Tommy</h1>
+			</header>
+			<!-- TABS LIST -->
+			<ul id="tabs-list">
+				<!-- MENU TOGGLE -->
+				<label id="open-nav-label" for="nav-ctrl"></label>
+				<li id="li-for-panel-1">
+					<label class="panel-label" for="panel-1-ctrl">Radio Toggles</label>
+				</li><!--INLINE-BLOCK FIX-->
+				<li id="li-for-panel-2">
+					<label class="panel-label" for="panel-2-ctrl">Input :checked</label>
+				</li><!--INLINE-BLOCK FIX-->
+				<li id="li-for-panel-3">
+					<label class="panel-label" for="panel-3-ctrl">The Tabs</label>
+				</li><!--INLINE-BLOCK FIX-->
+				<li id="li-for-panel-4">
+					<label class="panel-label" for="panel-4-ctrl">Tab :hover</label>
+				</li><!--INLINE-BLOCK FIX-->
+				<li id="li-for-panel-5" class="last">
+					<label class="panel-label" for="panel-5-ctrl">Menu</label>
+				</li>
+				<label id="close-nav-label" for="nav-ctrl">Close</label>
+			</ul>
+			<!-- THE PANELS -->
+			<article id="panels">
+				<div class="container">
+					<section id="panel-1">
+						<main>
+							<h1>Radio Toggles</h1>
+							<p>In this demo, <code>labels</code> for hidden <code>radios</code> toggle the content.  This is based on the behavior in which clicked <code>labels</code> for a <code>radio</code> or <code>checkbox</code> input will check that <code>input</code>.</p><pre>&lt;input id="radio-1" type="radio" name="demo-radios"&gt; &lt;input id="radio-2" type="radio" name="demo-radios"&gt;</pre>#radio-1: <input id="radio-1" type="radio" name="demo-radios"> #radio-2: <input id="radio-2" type="radio" name="demo-radios"><pre>&lt;label for="radio-1"&gt;Toggle #radio-1&lt;/label&gt; &lt;label for="radio-2"&gt;Toggle #radio-2&lt;/label&gt;</pre>
+							<label for="radio-1" class="demo-label">Toggle #radio-1</label>
+							<label for="radio-2" class="demo-label">Toggle #radio-2</label>
+							<p>Click one of the labels above and see its effect on the radios above it.</p>
+							<p>The radios for this pen's tabs are displayed semi-transparently at the top of this demo page.</p>
+						</main>
+					</section>
+					<section id="panel-2">
+						<main>
+							<h1>Input :checked</h1>
+							<p>In CSS, you can query based on the <code>:checked</code> selector for <code>radios</code> and <code>checkboxes</code> to style siblings down the DOM scope. To do this, we can use the <code>~</code>. It will select same-level siblings after the given selector. Because the tab <code>labels</code> in this demo are nested and not immediate siblings, we will need to select their topmost parent that is at the same level as our <code>input</code>.</p>
+							<p>To demonstrate, we will do a simplified version of this with a checkbox:</p><pre><strong>&lt;!-- invisible input and its label --&gt;</strong> &lt;input id="demo-child-toggle" type="checkbox"&gt; &lt;label for="demo-child-toggle"&gt;Toggle #demo-child&lt;/label&gt; <strong>&lt;-- parent to select first via "~" --&gt;</strong> &lt;div id="demo-parent"&gt; <strong>&lt;-- child to select through parent --&gt;</strong> &lt;div id="demo-child"&gt;#demo-child&lt;/div&gt; &lt;/div&gt;</pre><p>and in our CSS:</p><pre><strong>/* hiding our checkbox */</strong>
+							#demo-child-toggle {
+							display: none;
+							}
+							<strong>/* selecting the child */</strong>
+							#demo-child-toggle:checked ~ #demo-parent #demo-child {
+								color: #c0392b;
+								font-weight: bold;
+								text-transform: uppercase;
+							}</pre>
+							<hr>
+							<input id="demo-child-toggle" type="checkbox">
+							<label class="demo-label" for="demo-child-toggle">Toggle #demo-child</label>
+							<div id="demo-parent">
+								<div id="demo-child">#demo-child</div>
+							</div>
+							<hr>
+							<p>As you can see, we can control the style of content that comes after a hidden input by toggling it via its label.</p>
+							<p>At this point you can probably get the picture for how we can conditionally display the tabbed panel content in this pen.</p>
+						</main>
+					</section>
+					<section id="panel-3">
+						<main>
+							<h1>The Tabs</h1>
+							<p>Here is the basic form of a tab in this demo:</p><pre>&lt;li id="li-for-panel-1"&gt; &lt;label class="panel-label" for="panel-1-ctrl"&gt;CSS Radio Toggles&lt;/label&gt; &lt;/li&gt;</pre>
+							<p>For the "active" tab to cover the bottom border, the child <code>label</code> gets an additional 2 pixels of <code>padding-top</code> while its parent <code>li</code> gets a <code>translateY(1px)</code>. This not only covers the bottom border, but gives an ever-so-subtle "moving toward you" effect by shifting the title down <code>1px</code>.</p>
+							<pre>#panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 {
+								transform: translate3d(0, 1px, 0);
+							}
+							#panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 label.panel-label {
+								padding-top: 26px; <strong>/* instead of "24px" */</strong>
+							}</pre>
+						</main>
+					</section>
+					<section id="panel-4">
+						<main>
+							<h1>Tab :hover</h1>
+							<p>When designing the <code>:hover</code> and "active" states I had a dilemma.</p><pre>&lt;li id="li-for-panel-1"&gt; &lt;label class="panel-label" for="panel-1-ctrl"&gt;CSS Radio Toggles&lt;/label&gt; &lt;/li&gt;</pre>
+							<p>Each tab <code>li</code> has a <code>border-right</code>. But when the additional <code>border-top</code> appears, we dont want the lighter <code>border-right</code> to be shown all the way to the top. The fix for this is to cancel the <code>border-right</code> on both the <code>:hover</code> and "active" state as well as style the <code>li</code>'s next sibling's <code>border-left</code>.</p>
+							<p>To do this, we can use a combination of the siblings after <code>~</code> and sibling next <code>+</code> selectors:</p>
+							<pre><strong>/* remove the right border on "active" state */</strong>
+							#panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 {
+								border-right: none;
+							}
+							<strong>/* add left to next sibling */</strong>
+							#panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 + li {
+								border-left: 1px solid #dfdfdf;
+							}</pre>
+						</main>
+					</section>
+					<section id="panel-5">
+						<main>
+							<h1>Menu</h1>
+							<p>On small screens, the tabs fold down into an expandable menu. To trigger the menu, I use a <code>checkbox</code> (note that it appears at the top of the screen on smaller screen sizes). There are two labels that trigger this checkbox. One opens and the other closes the menu. The one that opens is absolutely positioned invisibly over the "active" menu item. The closing label is at the bottom of the open menu.</p>
+							<p>The best way I have found to show and hide content without using absolute positioning is to use a combination of <code>max-height</code> and <code>opacity</code>. When "inactive", the content has a <code>max-height: 0</code> and <code>opacity: 0</code>.</p>
+							<p>It also has a <code>transition: opacity</code> when I don't know the future height (this panel's content for example) and <code>transition: opacity, max-height</code> when I do know the future height (like the menu). When "active", the <code>max-height</code> and <code>opacity</code> get positive values and the content will transition in. I'm sure flexbox could get me around this hack, but this works for now.</p>
+						</main>
+					</section>
+				</div>
+			</article>
+		</body>
+	</html>
+
+	<?php get_footer(landing); ?>
